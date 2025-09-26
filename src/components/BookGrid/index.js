@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import PropTypes from "prop-types";
 
-const BookCard = ({ book, onSelectBook }) => {
+const BookGrid = ({ book, onSelectBook }) => {
   return (
     <Card
       sx={{ height: "100%", display: "flex", flexDirection: "column" }}
@@ -40,9 +40,9 @@ const BookCard = ({ book, onSelectBook }) => {
   );
 };
 
-BookCard.propTypes = {
-  book: PropTypes.object.isRequired,
-  onSelectBook: PropTypes.func.isRequired,
-};
+// BookCard.propTypes = {
+//   book: PropTypes.object.isRequired,
+//   onSelectBook: PropTypes.func.isRequired,
+// };
 
-export default BookCard;
+export default BookGrid;

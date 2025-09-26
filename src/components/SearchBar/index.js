@@ -1,8 +1,8 @@
-import { Box, TextField, IconButton } from "@mui/material";
+import { Box, IconButton, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import PropTypes from "prop-types";
 
-const SearchBar = ({ query, setQuery, onSearch }) => (
+const SearchBar = ({ query, setQuery, onSearch }) => {
+  return(
   <Box display="flex" alignItems="center" gap={1}>
     <TextField
       variant="outlined"
@@ -18,11 +18,5 @@ const SearchBar = ({ query, setQuery, onSearch }) => (
     </IconButton>
   </Box>
 );
-
-SearchBar.propTypes = {
-  query: PropTypes.string.isRequired,
-  setQuery: PropTypes.func.isRequired,
-  onSearch: PropTypes.func.isRequired,
 };
-
 export default SearchBar;

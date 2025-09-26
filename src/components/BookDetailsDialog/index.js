@@ -1,39 +1,49 @@
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
-import L from "leaflet";
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid, Typography } from "@mui/material";
+import BookMap from "../BookMap";
 
-// Fix marker icons in React-Leaflet
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
-  iconUrl: require("leaflet/dist/images/marker-icon.png"),
-  shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
-});
+const BookDetailsDialog = ({ book, open, onClose, userLocation }) => {
+  if (!book) return null;
 
-const BookMap = ({ userLocation, libraries }) => {
+  // Dummy nearby libraries
+  const libraries = [
+    { name: "Central Library", lat: userLocation.lat + 0.01, lng: userLocation.lng + 0.01 },
+    { name: "Campus Library", lat: userLocation.lat - 0.01, lng: userLocation.lng - 0.01 },
+  ];
+
   return (
-    <MapContainer
-      center={[userLocation.lat, userLocation.lng]}
-      zoom={13}
-      style={{ height: "300px", width: "100%", marginTop: "20px" }}
-    >
-      <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
-      />
-      {/* 📍 User Location */}
-      <Marker position={[userLocation.lat, userLocation.lng]}>
-        <Popup>You are here</Popup>
-      </Marker>
-
-      {/* 📚 Libraries */}
-      {libraries.map((lib, idx) => (
-        <Marker key={idx} position={[lib.lat, lib.lng]}>
-          <Popup>{lib.name}</Popup>
-        </Marker>
-      ))}
-    </MapContainer>
+    <Dialog open={open} onClose={onClose} fullWidth maxWidth="md">
+      <DialogTitle>{book.title}</DialogTitle>
+      <DialogContent dividers>
+        <Grid container spacing={2}>
+          <Grid item xs={12} md={4}>
+            <img
+              src={
+                book.cover_i
+                  ? `https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`
+                  : "/placeholder.jpg"
+              }
+              alt={book.title}
+              width="100%"
+            />
+          </Grid>
+          <Grid item xs={12} md={8}>
+            <Typography variant="h6">
+              Author: {book.author_name?.[0] || "Unknown"}
+            </Typography>
+            <Typography>
+              First Published: {book.first_publish_year || "N/A"}
+            </Typography>
+            <Typography variant="body2" sx={{ mt: 2 }}>
+              Subjects: {book.subject?.slice(0, 5).join(", ") || "N/A"}
+            </Typography>
+          </Grid>
+        </Grid>
+        <BookMap userLocation={userLocation} libraries={libraries} />
+      </DialogContent>
+      <DialogActions>
+        <Button onClick={onClose}>Close</Button>
+      </DialogActions>
+    </Dialog>
   );
 };
-
-export default BookMap;
+export default BookDetailsDialog;

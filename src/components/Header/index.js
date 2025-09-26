@@ -1,29 +1,18 @@
-// src/components/SearchBar.jsx
-import { Box, TextField, IconButton } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
-import PropTypes from "prop-types";
+import { AppBar, Box, Toolbar, Typography } from "@mui/material";
+import SearchBar from "../SearchBar";
 
-const SearchBar = ({ query, setQuery, onSearch }) => (
-  <Box display="flex" alignItems="center" gap={1}>
-    <TextField
-      variant="outlined"
-      placeholder="Search by title, author, or subject"
-      size="small"
-      fullWidth
-      value={query}
-      onChange={(e) => setQuery(e.target.value)}
-      onKeyDown={(e) => e.key === "Enter" && onSearch()}
-    />
-    <IconButton color="inherit" onClick={onSearch}>
-      <SearchIcon />
-    </IconButton>
-  </Box>
-);
-
-SearchBar.propTypes = {
-  query: PropTypes.string.isRequired,
-  setQuery: PropTypes.func.isRequired,
-  onSearch: PropTypes.func.isRequired,
+const Header = ({ query, setQuery, onSearch }) => {
+  return (
+    <AppBar position="sticky" color="primary">
+      <Toolbar>
+        <Typography variant="h6" sx={{ flexGrow: 1 }}>
+          📚 Book Finder
+        </Typography>
+        <Box width="400px">
+          <SearchBar query={query} setQuery={setQuery} onSearch={onSearch} />
+        </Box>
+      </Toolbar>
+    </AppBar>
+  );
 };
-
-export default SearchBar;
+export default Header;

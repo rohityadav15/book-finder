@@ -1,22 +1,31 @@
-import { Box, IconButton, TextField } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
+import { useState } from "react";
+import { TextField, Button, Box } from "@mui/material";
 
-const SearchBar = ({ query, setQuery, onSearch }) => {
-  return(
-  <Box display="flex" alignItems="center" gap={1}>
-    <TextField
-      variant="outlined"
-      placeholder="Search by title, author, or subject"
-      size="small"
-      fullWidth
-      value={query}
-      onChange={(e) => setQuery(e.target.value)}
-      onKeyDown={(e) => e.key === "Enter" && onSearch()}
-    />
-    <IconButton color="primary" onClick={onSearch}>
-      <SearchIcon />
-    </IconButton>
-  </Box>
-);
-};
+function SearchBar({ onSearch }) {
+  const [query, setQuery] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (query.trim()) onSearch(query);
+  };
+
+  return (
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{ display: "flex", gap: 2, justifyContent: "center" }}
+    >
+      <TextField
+        label="Search by Title"
+        variant="outlined"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+      />
+      <Button type="submit" variant="contained">
+        Search
+      </Button>
+    </Box>
+  );
+}
+
 export default SearchBar;

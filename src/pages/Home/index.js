@@ -28,7 +28,7 @@ function App() {
         📚 Book Finder
       </Typography>
 
-      <SearchBar onSearch={handleSearch} />
+      <SearchBar onSearch={handleSearch} style={{size:"small"}} />
 
       <Box sx={{ mt: 4 }}>
         {loading && <Loader />}

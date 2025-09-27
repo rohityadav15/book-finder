@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# Project Name
+ ## 📚 Book Finder App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React.js application to search and display books using an external API.  
+The project follows a modular folder structure with reusable components and Material-UI for styling.
+
+## Features
+
+ Search books by title, author, or keyword  
+- Display book details in card format  
+- Loader while fetching data  
+- Error message handling  
+- API integration for dynamic data  
+- Responsive UI with **Material-UI**
+
+## Technologies
+
+- React.js - Frontend library  
+- Material-UI (MUI) - UI components  
+- Axios - API requests  
+
+## Installation 
+
+npm install
+
+## Project Create
+
+npx create-react-app book-finder
+
+npm start
+
+## Project upload on GitHub
+
+**Clone the repository**
+
+git clone https://github.com/rohityadav15/book-finder.git
+
+## 📂 Project Structure
+
+src/
+│── components/
+│ ├── ErrorMessage.js **Displays error messages**
+│ ├── SearchBar.js **Search input with Material-UI**
+│ ├── BookCard.js **Single book card display**
+│ ├── BookList.js **Renders list of books**
+│ ├── Loader.js **Loading spinner**
+│
+│── pages/
+│ ├── HomePage.js **Main page with search and results**
+│
+│── services/
+│ ├── api.js **API fetch logic**
+│
+│── App.js **Main entry point**
+│── index.js **React DOM render**
 
 ## Available Scripts
 
-In the project directory, you can run:
+npm start – Runs the app in development mode
 
-### `npm start`
+npm run build – Builds the app for production
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+npm test – Runs tests (if configured)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Material-UI Usage
 
-### `npm test`
+This project uses Material-UI (MUI) for modern and responsive UI.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## API Service
 
-### `npm run build`
+The API logic is separated in src/services/api.js for maintainability.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Contribution
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Create your feature branch (git checkout -b feature/awesome-feature)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Commit your changes (git commit -m 'Add awesome feature')
 
-### `npm run eject`
+Push to the branch (git push origin feature/awesome-feature)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Open a Pull Request
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Deployed on
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Deployed Project link
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Author 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Developed by Rohit Kumar Yadav.
 
-### Code Splitting
+## GitHub project code link
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+https://github.com/rohityadav15/book-finder.git

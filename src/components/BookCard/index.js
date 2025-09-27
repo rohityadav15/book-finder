@@ -33,7 +33,7 @@ function BookCard({ book }) {
       </Box>
 
       <CardContent sx={{ flexGrow: 1 }}>
-        <Typography variant="h6" noWrap>
+        <Typography variant="h6"  noWrap>
           {book.title}
         </Typography>
         <Typography variant="body2" color="text.secondary" noWrap>

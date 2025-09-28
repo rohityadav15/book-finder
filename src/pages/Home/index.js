@@ -23,14 +23,16 @@ function App() {
   };
 
   return (
-    <Container sx={{ py: 4}}>
-      <Typography variant="h4" gutterBottom align="center">
-        📚 Book Finder
-      </Typography>
+    <Container sx={{ py: 4 }}>
+      <Box sx={{ bgcolor: "yellowgreen", boxShadow: 2, padding:3  }}>
+        <Typography variant="h4" gutterBottom align="center">
+          📚 Book Finder
+        </Typography>
 
-      <SearchBar onSearch={handleSearch} style={{size:"small"}} />
+        <SearchBar onSearch={handleSearch} />
+      </Box>
 
-      <Box sx={{ mt: 4 }}>
+      <Box sx={{ mt: 4, display: "flex", justifyContent: "center" }}>
         {loading && <Loader />}
         {error && <ErrorMessage message={error} />}
         {!loading && !error && <BookList books={books} />}

@@ -13,15 +13,17 @@ function SearchBar({ onSearch }) {
     <Box
       component="form"
       onSubmit={handleSubmit}
-      sx={{ display: "flex", gap: 2, justifyContent: "center" }}
+      sx={{ display: "flex", gap: 2, justifyContent: "center"}}
     >
       <TextField
         label="Search by Title"
         variant="outlined"
         value={query}
+        size="small"
         onChange={(e) => setQuery(e.target.value)}
+        style={{backgroundColor:"white"}}
       />
-      <Button type="submit" variant="contained">
+      <Button type="submit" variant="contained" size="small" >
         Search
       </Button>
     </Box>

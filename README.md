@@ -21,13 +21,13 @@ The project follows a modular folder structure with reusable components and Mate
 
 ## Installation 
 
-npm install
+```npm install```
 
 ## Project Create
 
-npx create-react-app book-finder
+```npx create-react-app book-finder```
 
-npm start
+```npm start```
 
 ## Project upload on GitHub
 
@@ -35,32 +35,13 @@ npm start
 
 git clone https://github.com/rohityadav15/book-finder.git
 
-## 📂 Project Structure
-
-src/
-│── components/
-│ ├── ErrorMessage.js **Displays error messages**
-│ ├── SearchBar.js **Search input with Material-UI**
-│ ├── BookCard.js **Single book card display**
-│ ├── BookList.js **Renders list of books**
-│ ├── Loader.js **Loading spinner**
-│
-│── pages/
-│ ├── HomePage.js **Main page with search and results**
-│
-│── services/
-│ ├── api.js **API fetch logic**
-│
-│── App.js **Main entry point**
-│── index.js **React DOM render**
-
 ## Available Scripts
 
-npm start – Runs the app in development mode
+```npm start – Runs the app in development mode```
 
-npm run build – Builds the app for production
+```npm run build – Builds the app for production```
 
-npm test – Runs tests (if configured)
+```npm test – Runs tests (if configured)```
 
 ## Material-UI Usage
 
@@ -70,21 +51,11 @@ This project uses Material-UI (MUI) for modern and responsive UI.
 
 The API logic is separated in src/services/api.js for maintainability.
 
-## Contribution
-
-Create your feature branch (git checkout -b feature/awesome-feature)
-
-Commit your changes (git commit -m 'Add awesome feature')
-
-Push to the branch (git push origin feature/awesome-feature)
-
-Open a Pull Request
-
 ## Deployed on
-
+netlify.com
 
 ## Deployed Project link
-
+https://book-finder-app-by-rohit.netlify.app/
 
 ## Author 
 
@@ -92,4 +63,25 @@ Developed by Rohit Kumar Yadav.
 
 ## GitHub project code link
 
-https://github.com/rohityadav15/book-finder.git
+```https://github.com/rohityadav15/book-finder.git```
+
+# Project Structure
+
+```plaintext
+src/
+│── components/
+│   ├── ErrorMessage.js     # Displays error messages
+│   ├── SearchBar.js        # Search input with Material-UI
+│   ├── BookCard.js         # Single book card display
+│   ├── BookList.js         # Renders list of books
+│   ├── Loader.js           # Loading spinner
+│
+│── pages/
+│   ├── HomePage.js         # Main page with search and results
+│
+│── services/
+│   ├── api.js              # API fetch logic
+│
+│── App.js                  # Main entry point
+│── index.js                # React DOM render
+
